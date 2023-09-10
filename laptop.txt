@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .frame {
+      position: absolute;
+      top: -30px;
+      left: -50px;
+      width: 500px;
+      height: 281px;
+      background-image: url('http://dataastraa.com/wp-content/uploads/2023/07/laptop-png-hd-macbook-pro-png-laptop-free-1600-1.png'); /* Replace 'image.jpg' with the actual image you want to display */
+      background-size: cover;
+      z-index: 1;
+    }
+    .image {
+      position: relative;
+      display: inline-block;
+      top: 20px;
+      left: 160px;
+      width: 400px; /* Adjust the width and height as per your requirements */
+      height: 200px;
+      background-image: url(http://dataastraa.com/wp-content/uploads/2023/07/Tupperware-5.png'); /* Replace 'frame.png' with the actual frame image */
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var images = [
+        'http://dataastraa.com/wp-content/uploads/2023/07/Tupperware-5.png',  // Replace with the actual image URLs
+        'http://dataastraa.com/wp-content/uploads/2023/07/Tupperware-2.png',
+        'http://dataastraa.com/wp-content/uploads/2023/07/Tupperware-3.png',
+        'http://dataastraa.com/wp-content/uploads/2023/07/Tupperware-4.png',
+        'http://dataastraa.com/wp-content/uploads/2023/07/Tupperware-5.png'
+      ];
+
+      var imageElement = document.querySelector('.image');
+      var frameElement = document.querySelector('.frame');
+
+      var currentImageIndex = 0;
+
+      function displayNextImage() {
+        var imageUrl = images[currentImageIndex];
+        imageElement.style.backgroundImage = 'url(' + imageUrl + ')';
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+      }
+
+      displayNextImage(); // Display the first image immediately
+
+      setInterval(displayNextImage, 2000); // Switch to the next image every 2 seconds
+    });
+  </script>
+</head>
+<body>
+  <div class="image">
+    <div class="frame"></div>
+  </div>
+</body>
+</html>
+
